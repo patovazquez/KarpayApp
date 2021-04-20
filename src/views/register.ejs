@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head general -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karpay</title>       
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  </head>
+
+<!-- link css -->
+    <link rel="stylesheet" href="/styles/usersForms.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- link js -->
+<script src= "/js/main.js" defer></script>
+   
+<body>  
+   
+    <section class="main-section">    
+        <section class="section">
+            <div class="title">
+                <div class="picture">
+                    <img src="\images\karpayLogo.png" alt="logo" class= "logo">
+                </div>            
+            <p class='titulos'>Registración</p>            
+            </div>
+
+                
+            <form method="POST" class = "input-fields"action="/admin/users/register" enctype="multipart/form-data" id='usersForm'>
+
+                <div class="error_messages">
+                    <% if (typeof(errors) != 'undefined') { %>
+
+                        <% for( let index = 0; index < errors.length; index++ ) { %>
+                            <p><%= errors[index].msg %> </p>
+                        <% } %> 
+
+                    <% } %>
+
+                </div>
+                
+                    <input class="input-decoration" type="text" placeholder="Nombre" name="first_name" <% if (typeof(old) != 'undefined') { %> value= <%= old.first_name %> <%} %>>
+                    <input class="input-decoration" type="text" placeholder="Apellido" name="last_name"<% if (typeof(old) != 'undefined') { %> value= <%= old.last_name %> <%} %>>
+                    <input class="input-decoration" type="email" placeholder="E-mail" name="email" <% if (typeof(old) != 'undefined') { %> value= <%= old.email %> <%} %>>
+                    <input class="input-decoration" type="password" placeholder="Contraseña" name="password" <% if (typeof(old) != 'undefined') { %> value= <%= old.password %> <%} %>>
+                    <input class="input-decoration" type="password" placeholder="Confirmar contraseña" name="passwordCheck" <% if (typeof(old) != 'undefined') { %> value= <%= old.passwordCheck %> <%} %>>
+                    <small id= "user-mesage"></small>
+                    <select name="tipe" class="input-decoration" id= 'tipeUsers'>
+                        <option value="default" selected disabled onchange="setSucces()">Seleccione tipo de usuario</option>
+                        <option value="Admin">Administrador</option>
+                        <option value="Colab">Colaborador</option>
+                        <option value="Visit">Visitante</option>                        
+                      </select>
+                    <div class= "avatar">
+                        <label for="" class="label_decoration">Avatar:</label>
+                        <input class="img_field" type="file" name="user_img" id="" enctype="multipart/form-data">
+                    </div>
+                    <button type="submit" class="submit-button">Crear Usuario</button>
+                
+            </form>
+
+        </section>
+    </section>      
+</body>
+</html>

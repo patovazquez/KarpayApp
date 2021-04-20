@@ -1,0 +1,138 @@
+*{
+    font-family: 'Maven Pro', sans-serif;
+}
+
+body{ 
+    height:100vh; margin:0;
+    display:flex; 
+    flex-direction:column; 
+    background-image: url("/images/karpaylogo.svg"); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: 70%, 80%;   
+
+}
+
+.main-section{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 30px;
+    min-width:60% ;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.title{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.picture{
+    text-align: center;
+}
+
+.picture img{
+    width: 100px;
+}
+
+p.titulos{
+    padding: 0px;
+    text-align: center;
+    font-size: 25px;
+    color: #0c2d62;
+    margin: 0px;
+    margin-bottom: 15px;
+}
+
+.input-fields{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-fields a{
+    text-decoration: none;
+    color: white;
+    margin-top: 7px;
+}
+
+.input-decoration{
+    height: 37px;
+    width: 90%;
+    padding-left: 10px;
+    border: none;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    outline: none;    
+    box-shadow: 2px 5px 34px -7px rgba(0,0,0,0.61);
+    -moz-box-shadow: 2px 5px 34px -7px rgba(0,0,0,0.61);
+    box-shadow: 2px 5px 34px -7px rgba(0,0,0,0.61);
+}
+
+.submit-button{
+    transition: all 0.3s ease 0s;
+    margin-top: 15px;
+	background-color: #458e72;
+	border-radius: 10em;
+	border: none;
+	padding: 20px 40px;
+	font-size: 18pt;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	outline: none;
+	}
+    .submit-button:hover {
+	background-color: #ffaa29;
+	box-shadow: 0px 15px 20px rgba(121, 121, 121, 0.4);
+	color:black;
+	transform: translateX(-7px);
+  }
+  div.error_messages{
+    color: red;
+}
+  select.error{
+    height: 37px;
+    width: 90%;
+    padding-left: 10px;
+    border: solid rgb(248, 206, 18);;
+}
+small{
+    margin-top:13px;
+    color: rgb(248, 206, 18);
+    margin-left: 5px;
+}
+
+
+@media (max-width: 500px){
+    .section{
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    
+    }
+
+    .section h1{
+        margin-right: 0px;
+    }
+
+    .input-fields{
+        width: 100%;
+    }
+}

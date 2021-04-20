@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!-- head general -->
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karpay</title>       
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+
+
+ <!-- link css -->
+    <link rel="stylesheet" href="/styles/usersForms.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body>
+ 
+    <!-- main section -->
+
+    <section class="main-section">    
+        <section class="section">  
+                <div class="title">
+                    <div class="picture">
+                        <img src="\images\karpayLogo.png" alt="logo" class= "logo">
+                    </div>                
+                <p class='titulos'>Karpay Administrador</p>                
+                </div>
+
+            <form class="input-fields" method="POST" action="/admin" >
+
+                <% if (typeof(error) != 'undefined') { %>
+                
+                    <p class="error_message"><%= "El usuario y/o contraseña es incorrecto" %> </p>
+                <% } %>
+
+                <input class="input-decoration" type="email" placeholder="E-mail" name="email" value=<% if (typeof(error) != 'undefined') { %> <%= old.email %>  <% } %>>
+                <input class="input-decoration" type="password" placeholder="Contraseña" name="password">
+                
+                <button class="submit-button">Iniciar Sesión</button>                
+                
+            </form>
+        </section>
+    </section>
+    <!-- fin main section --> 
+</body>
+</html>
