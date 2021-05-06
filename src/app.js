@@ -17,7 +17,9 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
 var usersRouter = require('./routes/users');
-
+var novedadesRouter = require('./routes/novedades');
+var talleresRouter = require('./routes/talleres');
+//var productsRouter = require('./routes/products');
 
 var app = express();
 
@@ -42,7 +44,9 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/admin', adminRouter);
 app.use('/admin/users', usersRouter);
-
+app.use('/admin/novedades', novedadesRouter);
+app.use('/admin/talleres', talleresRouter);
+//app.use('/admin/products', productsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

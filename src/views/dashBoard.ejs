@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karpay Dashboard</title>
+    <!-- link css -->
+    <link rel="stylesheet" href="/styles/dashboard.css">
+    
 </head>
+
+<!-- header -->
+<%- include('adminPartials/adminHeader') %>
+<!--fin del header -->
+
+
 <body>
     <h2><%= title%> </h2>
+
+    <section class= "buttons-section">
+        <a href="/admin/users"><button class="users-button">Usuarios</button> </a>
+        <a href="/admin/novedades"><button class="users-button">Novedades</button> </a>
+        <a href="/admin/talleres"><button class="users-button">Talleres</button> </a>
+        <a href="/admin/products"><button class="users-button">Productos</button> </a>
+    </section>
 </body>
 </html>

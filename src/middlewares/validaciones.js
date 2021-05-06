@@ -56,6 +56,37 @@ module.exports = {
         .isLength({ min: 8 })
 
     ],
+    editUser: [       
+
+        body('first_name')
+        .isLength({ min: 2 })
+        .withMessage("El campo de nombre debe tener 2 caracteres como minimo"),
+
+        body('last_name').
+        isLength({ min: 2 })
+        .withMessage("El campo de apellido debe tener 2 caracteres como minimo"),
+        
+        body('email')
+        .isEmail()
+        .withMessage("Ingrese un email valido"),
+        
+        body('password')
+        .isLength({ min: 8 })
+        .withMessage("La contraseña debe tener 8 caracteres como minimo"),
+
+        body('user_img')
+        .custom((value,{req}) => req.file) //Si no existe req.file la verificacion no va a pasar
+        .withMessage("La imagen no es valida o no se ha elegido ninguna"),
+
+        body('passwordCheck').
+        custom((value,{req}) => {
+            if (value !== req.body.password) {
+                throw new Error('Las contraseñas no coinciden');
+              }
+              return true;
+        })
+
+    ],
     /*product:[
         body('title')
         .isLength({ min: 2 })
@@ -77,4 +108,21 @@ module.exports = {
         .withMessage("La imagen no es valida o no se ha elegido ninguna")
 
     ]*/
+    novedades:[
+        body('title')
+        .isLength({ min: 2 })
+        .withMessage("El campo de nombre debe tener 2 caracteres como minimo"),
+        
+
+        body('resume')
+        .notEmpty()
+        .withMessage("El campo de resumen no puede estar vacio"),
+
+        
+        body('product_img')
+        .custom((value,{req}) => req.file) //Si no existe req.file la verificacion no va a pasar
+        .withMessage("La imagen no es valida o no se ha elegido ninguna")
+
+    ]
+
 }

@@ -1,0 +1,116 @@
+*{
+    font-family: 'Maven Pro', sans-serif;
+}
+h2{
+    margin:10px;
+    color: rgb(53, 53, 53)
+}
+body{ 
+    height:100vh; margin:0;
+    display:flex; 
+    flex-direction:column; 
+    background-image: url("/images/karpaylogo.svg"); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: 70%, 80%;   
+
+}
+.main-section{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+section.grid-container{
+        
+        display: flex;        
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        padding: 30px;
+        min-width:60% ;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+        margin-left: 10px;
+        margin-right: 10px;    
+    
+}
+.buttons-section{
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+a{
+    display: flex;    
+    text-decoration: none;
+    align-items: center;    
+    color: rgb(53, 53, 53)
+ }
+
+ #delete{
+     display: flex;
+     align-items: center;
+ }
+ 
+
+article.usersList{
+    display: flex;        
+        align-items: top;
+        flex-wrap: wrap;
+        box-sizing: border-box;         
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+        margin: 5px;   
+        padding: 8px;      
+    
+}
+
+.usersImage{ 
+    width: 70px;
+    height: fit-content;
+    border: solid;
+    border-color: rgb(77, 77, 77);
+    border-radius: 10px;
+}
+
+p{
+    margin: 10px
+}
+.users-button{    
+    transition: all 0.3s ease 0s;
+    margin-top: 15px;
+	background-color: #458e72;
+	border-radius: 10em;
+	border: none;
+	padding: 20px 40px;
+	font-size: 18pt;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	outline: none;
+	}
+    .users-button:hover {
+	background-color: #ffaa29;
+	box-shadow: 0px 15px 20px rgba(121, 121, 121, 0.4);
+	color:black;
+	transform: translateX(-7px);
+  }
+
+  .generalButton {
+    position: relative;
+    height: 50px;
+    background-color:#ffaa29;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    vertical-align: middle;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+   
+  }
+  .generalButton:hover {
+    box-shadow: 1px 1px 10px 7px rgba(112, 9, 9, 0.4);
+    background-color: white;

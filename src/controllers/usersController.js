@@ -11,7 +11,7 @@ module.exports = {
     index: async (req, res, next) => {
       try{
           let users = await db.User.findAll();
-          res.json (users);
+          res.render ('usersIndex', { users: users});
       }catch(error){
           res.send(error);
       }
@@ -20,7 +20,7 @@ module.exports = {
  
     register: (req, res, next) => {
 
-      res.render('register');
+      res.render('usersRegister');
       
     },
 
@@ -30,7 +30,7 @@ module.exports = {
 
       if (!errors.isEmpty()) {
 
-        return res.render('register', {errors: errors.array(), old: req.body})
+        return res.render('usersRegister', {errors: errors.array(), old: req.body})
       } 
       try{
         await db.User.create({
@@ -50,6 +50,57 @@ module.exports = {
       return res.redirect('/admin/users');
       
     },
+    edit: async (req,res)=>{
+    
+              try{
+                const oneUser = await db.User.findByPk(req.params.id)         
+                                  
+                res.render('userEdit',{oneUser: oneUser})
+              
+              }catch(error){
+                  res.send(error);
+              }
+  }, 
+  update: async (req,res) =>{
+      const errors = validationResult(req);
+
+      if (!errors.isEmpty()) {
+          let old = {
+              ...req.body,
+              id: req.params.id              
+          }
+          return res.render('userEdit', {errors: errors.array(), oneUser: old})
+      }else{
+          let editedUser = {
+              ...req.body,
+              image: req.file.filename,
+              password: bcrypt.hashSync(req.body.password, 10),
+          }
+
+          try{
+              await db.User.update(editedUser,{where:{id: req.params.id}})
+          }catch(error){
+              res.send(error);
+          }
+
+          res.redirect('/admin/users');
+      }
+  },
+  destroy: async (req,res)=> {
+
+    try{
+        await db.User.destroy({
+            where: {
+                id: req.params.id,
+            }
+          });      
+        
+    }catch(error){
+        res.send(error);
+    }
+    res.redirect('/admin/users/');
+    
+  },
     
     
 

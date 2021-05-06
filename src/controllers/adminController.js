@@ -48,9 +48,16 @@ module.exports = {
           res.send(error)
         }
 
-    }
+      }
 
     },
+
+    logout: (req,res)=>{
+      req.session.destroy();
+      
+      res.redirect('/');
+    },
+
 
         
 

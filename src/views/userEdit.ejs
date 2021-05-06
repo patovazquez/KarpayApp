@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Karpay</title>     
+    <!-- link css -->
+    <link rel="stylesheet" href="/styles/forms.css">
+    
+  </head>
+
+
+
+<!-- link js -->
+<script src= "/js/main.js" defer></script>
+
+<!-- header -->
+<%- include('adminPartials/adminHeader') %>
+<!--fin del header -->
+
+   
+<body>  
+   
+    <section class="main-section">    
+        <section class="section">
+            <div class="title">
+                <div class="picture">
+                    <img src="\images\karpayLogo.png" alt="logo" class= "logo">
+                </div>            
+            <p class='titulos'>Editando Usuario</p>            
+            </div>
+
+                
+            <form method="POST" class = "input-fields"action= "/admin/users/edit/<%= oneUser.id %>?_method=PUT" enctype="multipart/form-data" id='usersForm'>
+
+                <div class="error_messages">
+                    <% if (typeof(errors) != 'undefined') { %>
+
+                        <% for( let index = 0; index < errors.length; index++ ) { %>
+                            <p><%= errors[index].msg %> </p>
+                        <% } %> 
+
+                    <% } %>
+
+                </div>
+                
+                    <input class="input-decoration" type="text" placeholder="Nombre" name="first_name"  value= <%= oneUser.first_name %> >
+                    <input class="input-decoration" type="text" placeholder="Apellido" name="last_name" value= <%= oneUser.last_name %> >
+                    <input class="input-decoration" type="email" placeholder="E-mail" name="email"  value= <%= oneUser.email %> >
+                    <input class="input-decoration" type="password" placeholder="Contraseña" name="password" >
+                    <input class="input-decoration" type="password" placeholder="Confirmar contraseña" name="passwordCheck" >
+                    <small id= "user-mesage"></small>
+                    <select name="tipe" class="input-decoration" id= 'tipeUsers'>
+                        <option value="default" selected disabled onchange="setSucces()">Seleccione tipo de usuario</option>
+                        <option value="Admin">Administrador</option>
+                        <option value="Colab">Colaborador</option>
+                        <option value="Visit">Visitante</option>                        
+                      </select>
+                    <div class= "avatar">
+                        <label for="" class="label_decoration">Avatar:</label>
+                        <input class="img_field" type="file" name="user_img" id="" enctype="multipart/form-data">
+                    </div>
+                    <button type="submit" class="submit-button">Actualizar</button>
+                
+            </form>
+
+        </section>
+    </section>      
+</body>
+</html>

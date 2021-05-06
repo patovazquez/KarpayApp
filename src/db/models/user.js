@@ -11,12 +11,14 @@ module.exports = (sequelize, dataTypes) =>{
         underscored: true,
         timestamps: true
     });
-    /*User.associate = models =>{
-        User.belongsToMany(models.Product, {
-            through: 'users_products',
-        });
-    };*/
 
+        
+    User.associate = (models=>{
+        User.hasMany(models.Novedades, {foreignKey: 'created_user_id' })
+
+    }); 
+
+    
 
     return User
 

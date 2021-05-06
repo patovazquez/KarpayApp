@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karpay Usuarios</title>          
+    <title>Karpay Novedades</title>          
     <!-- link css -->
     <link rel="stylesheet" href="/styles/indexes.css">
 
@@ -17,30 +17,30 @@
 <!--fin del header -->
 
 <body>
-    <h2>Index de usuarios </h2>
+    <h2>Index de Novedades </h2>
     <section class= "buttons-section">
-        <a href="/admin/users/register"><button class="users-button">Nuevo Usuario</button> </a>        
+        <a href="/admin/novedades/register"><button class="users-button">Nueva Novedad</button> </a>        
     </section>
 
     <section class="main-section">
 
         <section class="grid-container">
-            <% users.forEach(users => { %>
+            <% Novedades.forEach(Novedades => { %>
                 
                 <article class= 'usersList'>
-                    <a href="users/edit/<%= users.id %>">
+                    <a href="/admin/novedades/edit/<%= Novedades.id %>">
                         <button class= "generalButton">Editar</button>    
                     </a>
 
-                    <form action="/admin/users/delete/<%= users.id %>?_method=DELETE" method="POST" enctype="multipart/form-data" id="delete">
+                    <form action="/admin/novedades/delete/<%= Novedades.id %>?_method=DELETE" method="POST" enctype="multipart/form-data" id="delete">
                         <button class= "generalButton">Eliminar</a></button>
                     </form>
                     
+                    <a href="/admin/novedades/detail/<%= Novedades.id %>">
+                    <img id="myImg" src="/images/novedades/<%= Novedades.image %>" class="usersImage" alt="Image">               
+                    <p><%= Novedades.title %> </p>              
                     
-                    <img id="myImg" src="/images/users/<%= users.image %>" class="usersImage" alt="Image">               
-                    <p><%= users.first_name %> <%= users.last_name %></p>              
-                    
-                                 
+                </a>                   
                 </article>
             
             

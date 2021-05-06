@@ -1,0 +1,62 @@
+*{
+    font-family: 'Maven Pro', sans-serif;
+}
+body{ 
+    height:100vh; margin:0;
+    display:flex; 
+    flex-direction:column; 
+    background-image: url("/images/karpaylogo.svg"); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: 70%, 80%;   
+
+}
+.buttons-section{
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+a{
+   display: flex;    
+   text-decoration: none;
+   align-items: center; 
+}
+h2{
+    margin:10px;
+    color: rgb(53, 53, 53)
+}
+
+
+.users-button{    
+    transition: all 0.3s ease 0s;
+    margin-top: 15px;
+	background-color: #458e72;
+	border-radius: 10em;
+	border: none;
+	padding: 20px 40px;
+	font-size: 18pt;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	outline: none;
+	}
+    .users-button:hover {
+	background-color: #ffaa29;
+	box-shadow: 0px 15px 20px rgba(121, 121, 121, 0.4);
+	color:black;
+	transform: translateX(-7px);
+  }
+
+
+
+
+  @media (max-width: 500px){
+    section{
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    
+    }
+}

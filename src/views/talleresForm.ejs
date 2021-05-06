@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Karpay</title>     
+    <!-- link css -->
+    <link rel="stylesheet" href="/styles/forms.css">
+    
+  </head>
+
+
+
+<!-- link js -->
+<script src= "/js/main.js" defer></script>
+
+<!-- header -->
+<%- include('adminPartials/adminHeader') %>
+<!--fin del header -->
+
+   
+<body>  
+   
+    <section class="main-section">    
+        <section class="section">
+            <div class="title">
+                <div class="picture">
+                    <img src="\images\karpayLogo.png" alt="logo" class= "logo">
+                </div>            
+            <p class='titulos'>Talleres</p>            
+            </div>
+
+                
+            <form method="POST" class = "input-fields"action="/admin/talleres/register" enctype="multipart/form-data" id='usersForm'>
+
+                <div class="error_messages">
+                    <% if (typeof(errors) != 'undefined') { %>
+
+                        <% for( let index = 0; index < errors.length; index++ ) { %>
+                            <p><%= errors[index].msg %> </p>
+                        <% } %> 
+
+                    <% } %>
+
+                </div>
+                
+                    <input class="input-decoration" type="text" placeholder="Titulo" name="title" <% if (typeof(old) != 'undefined') { %> value= <%= old.title %> <%} %>>
+                    
+                    <div class="description_box">
+                        <label for="" class="label_decoration">Resumen:</label>
+                       <textarea name="resume" id="" cols="30" rows="10"><% if (typeof(old) != 'undefined') { %> <%= old.resume %> <%} %></textarea>
+    
+                     </div>
+                     <div class="description_box">
+                        <label for="" class="label_decoration">Descripción:</label>
+                       <textarea name="description" id="" cols="30" rows="10"><% if (typeof(old) != 'undefined') { %> <%= old.description %> <%} %></textarea>
+    
+                     </div>
+                    
+                    <div class= "avatar">
+                        <label for="" class="label_decoration">Fotos</label>
+                        <input class="img_field" type="file" name="workshop_img" id="" enctype="multipart/form-data">
+                    </div>
+                    <button type="submit" class="submit-button">Publicar</button>
+                
+            </form>
+
+        </section>
+    </section>      
+</body>
+</html>

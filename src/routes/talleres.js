@@ -3,13 +3,13 @@ var router = express.Router();
 const path = require('path');
 var multer  = require('multer');
 var validations = require(path.join(__dirname,'..','middlewares','validaciones.js'));
-var adminPass = require(path.join(__dirname,'..' ,'middlewares', 'adminPass.js'));
+var usersPass = require(path.join(__dirname,'..' ,'middlewares', 'usersPass.js'));
 
 
 //Configuracion de multer
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, __dirname + '/../../public/images/users');
+      cb(null, __dirname + '/../../public/images/talleres');
     },
     filename: function (req, file, cb) {
       cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
@@ -28,19 +28,19 @@ var storage = multer.diskStorage({
   });
 //Fin de la configuracion de multer
 
-
-
-var usersController = require(path.join(__dirname,'..','controllers','usersController'));
+var talleresController = require(path.join(__dirname,'..','controllers','talleresController'));
 
 
 /* rutas GET */
-router.get('/',adminPass, usersController.index);
-router.get('/register',adminPass, usersController.register);
-router.get('/edit/:id',adminPass,usersController.edit);
+router.get('/', usersPass, talleresController.index);
+router.get('/register',usersPass, talleresController.register);
+router.get('/edit/:id',usersPass, talleresController.edit);
+router.get('/detail/:id', talleresController.detail);
 
-/* rutas POST */
-router.post('/register',adminPass, upload.single('user_img'),validations.register,usersController.processRegister);
-router.put('/edit/:id',adminPass, upload.single('user_img'),validations.editUser,usersController.update);
-router.delete('/delete/:id',adminPass, usersController.destroy); 
+/*Rutas POST */ 
+router.post('/register',usersPass, upload.single('workshop_img'),validations.novedades,talleresController.processRegister);
+router.put('/edit/:id',usersPass, upload.single('workshop_img'),validations.novedades,talleresController.update);
+router.delete('/delete/:id',usersPass, talleresController.destroy); 
 
-module.exports = router; 
+
+module.exports = router;
