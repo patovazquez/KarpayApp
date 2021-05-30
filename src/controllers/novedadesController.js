@@ -8,14 +8,13 @@ module.exports = {
 
     index: async (req, res, next) => {
 
-        //res.render('novedades');
+        //res.render('novedadesIndex'); 
       try{
           let novedades = await db.Novedades.findAll();
           res.render ('novedadesIndex', { Novedades: novedades});
       }catch(error){
           res.send(error);
       } 
-      
     },
 
     register: (req, res, next) => {

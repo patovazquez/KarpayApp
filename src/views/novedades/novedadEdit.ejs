@@ -1,0 +1,59 @@
+<%- include('partials/header') %> 
+<link rel="stylesheet" href="/styles/forms.css">
+
+<!-- link js -->
+<script src= "/js/main.js" defer></script>
+
+<!-- header -->
+<%- include('adminPartials/adminHeader') %>
+<!--fin del header -->
+  
+    <section class="main-section">    
+        <section class="section">
+            <div class="title">
+                <div class="picture">
+                    <img src="\images\karpayLogo.png" alt="logo" class= "logo">
+                </div>            
+            <p class='titulos'>Editando Novedades</p>            
+            </div>
+        
+            <form method="POST" class = "input-fields"action= "/admin/novedades/edit/<%= oneNovedad.id %>?_method=PUT" enctype="multipart/form-data" id='usersForm'>
+               
+                <div class="error_messages">
+                    <% if (typeof(errors) != 'undefined') { %>
+
+                        <% for( let index = 0; index < errors.length; index++ ) { %>
+                            <p><%= errors[index].msg %> </p>
+                        <% } %> 
+
+                    <% } %>
+
+                </div>
+                
+                    <input class="input-decoration" type="text" placeholder="Titulo" name="title" value= <%= oneNovedad.title %>>
+                    
+                    <div class="description_box">
+                        <label for="" class="label_decoration">Resumen:</label>
+                       <textarea name="resume" id="" cols="30" rows="10"><%= oneNovedad.resume %></textarea>
+    
+                     </div>
+                     <div class="description_box">
+                        <label for="" class="label_decoration">Descripción:</label>
+                       <textarea name="description" id="" cols="30" rows="10"> <%= oneNovedad.description %></textarea>
+    
+                     </div>
+                    
+                    <div class= "avatar">
+                        <label for="" class="label_decoration">Fotos</label>
+                        <input class="img_field" type="file" name="news_img" id="" enctype="multipart/form-data">
+                    </div>
+                    <button type="submit" class="submit-button">Publicar</button>
+                
+            </form>
+
+        </section>
+    </section>      
+
+<%- include('partials/footer') %>
+    
+

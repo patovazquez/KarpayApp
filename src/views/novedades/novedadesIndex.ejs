@@ -1,0 +1,40 @@
+<%- include('partials/header') %>    
+
+<link rel="stylesheet" href="/styles/indexes.css">
+<!-- header -->
+<%- include('adminPartials/adminHeader') %>
+<!--fin del header -->
+
+    <h2>Index de Novedades </h2>
+    <section class= "buttons-section">
+        <a href="/admin/novedades/register"><button class="users-button">Nueva Novedad</button> </a>        
+    </section>
+
+    <section class="main-section">
+
+        <section class="grid-container">
+            <% Novedades.forEach(Novedades => { %>
+                
+                <article class= 'usersList'>
+                    <a href="/admin/novedades/edit/<%= Novedades.id %>">
+                        <button class= "generalButton">Editar</button>    
+                    </a>
+
+                    <form action="/admin/novedades/delete/<%= Novedades.id %>?_method=DELETE" method="POST" enctype="multipart/form-data" id="delete">
+                        <button class= "generalButton">Eliminar</a></button>
+                    </form>
+                    
+                    <a href="/admin/novedades/detail/<%= Novedades.id %>">
+                    <img id="myImg" src="/images/novedades/<%= Novedades.image %>" class="usersImage" alt="Image">               
+                    <p><%= Novedades.title %> </p>              
+                    
+                </a>                   
+                </article>
+                      
+            <% }) %>    
+            
+        </section>
+    </section>
+        
+<%- include('partials/footer') %>
+    

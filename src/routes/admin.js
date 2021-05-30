@@ -13,5 +13,4 @@ router.get('/dashboard',usersPass, adminController.dashBoard);
 router.post('/',validations.login,adminController.processLogin);
 router.post('/logout',adminController.logout);
 
-
 module.exports = router;

@@ -32,7 +32,7 @@ var novedadesController = require(path.join(__dirname,'..','controllers','noveda
 
 
 /* rutas GET */
-router.get('/', usersPass, novedadesController.index);
+router.get('/',usersPass, novedadesController.index);
 router.get('/register',usersPass, novedadesController.register);
 router.get('/edit/:id',usersPass, novedadesController.edit);
 router.get('/detail/:id', novedadesController.detail);

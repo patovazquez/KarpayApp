@@ -1,0 +1,23 @@
+<%- include('partials/header') %>     
+
+    <link rel="stylesheet" href="/styles/forms.css">
+
+<%- include('adminPartials/adminHeader') %>
+  
+    <section class="main-section">    
+        <section class="section">
+            <article>
+                <p><%= oneNovedad.title %></p> 
+                <hr>
+                <img id="novedadImg" src="/images/novedades/<%= oneNovedad.image %>" class="detailImage" alt="Image">
+                <div class= 'texto'>
+                    <p><%= oneNovedad.resume %></p>
+                    <p><%= oneNovedad.description %></p>
+                </div>
+            </article>
+        </section>
+    </section>  
+    
+<%- include('partials/footer') %>
+    
+

@@ -1,0 +1,241 @@
+.quienes-somos{
+    background-image: url(../images/Frame2.png);
+    padding: 10rem 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-size: cover;
+}
+
+.quienes-somos__recuadro{
+    width: 40rem;
+}
+
+.quienes-somos__recuadro-titulo{
+    background-color: #458E72;
+}
+
+.quienes-somos__recuadro-titulo h2{
+    font-size: 3.5rem;
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+    font-weight: lighter;
+}
+
+.quienes-somos__recuadro-parrafo{
+    background-color: #56a084;
+}
+
+.quienes-somos__recuadro-parrafo p{
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    padding: 5rem 5rem;
+}
+
+/*nuestra mision*/
+
+.nuestra-mision{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(../images/imagen-nuestramision.jpg);
+    padding: 10rem 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.nuestra-mision_img{
+    width: 80%;
+    max-width: 25rem;
+    margin: auto;
+}
+
+.nuestra-mision_img img{
+    width: 100%;
+}
+
+.nuestra-mision__recuadro{
+    width: 40rem;
+    margin: 2rem;
+    padding-right: 6rem;
+}
+
+.nuestra-mision__recuadro-titulo{
+    background-color: #1d5c8c;
+}
+
+.nuestra-mision__recuadro-titulo h2{
+    font-size: 3.5rem;
+    font-weight: lighter;
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.nuestra-mision__recuadro-parrafo{
+    background-color: #4278A0 ;    
+}
+
+.nuestra-mision__recuadro-parrafo p{
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    padding: 5rem 5rem;
+}
+
+/*proyectos*/
+
+.proyectos{
+    background: #4ba07f;
+}
+
+.proyecto__recuadro{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.proyecto__recuadro-titulo h2{
+    font-size: 3.8rem;
+    font-weight:bolder;
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.proyecto__recuadro-parrafo{
+    align-items: center;
+}
+.proyecto__recuadro-parrafo p{
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+    width: 60%;
+    min-width: 20rem;
+    margin: auto;
+}
+
+.proyecto__recuadro-pie h2{
+    font-size: 2.4rem;
+    font-weight:bolder;
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+}
+/*agenda*/
+
+.agenda{
+    background-image: url(../images/img-novedades2.png);
+    background-size: cover;
+    padding: 8rem 16rem;
+    min-height: 55rem;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.agenda-box{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin:auto
+}
+
+.agenda_recuadro{
+    width: 20rem;
+    height: 20rem;
+    background-color:#4278A0;
+    padding: 3rem 1.5rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.agenda_recuadro-titulo{
+
+}
+
+.agenda_recuadro-titulo h2{
+    color: white;
+    text-align: center;
+}
+
+.agenda_recuadro-parrafo{
+
+}
+
+.agenda_recuadro-parrafo p{
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.agenda_recuadro-pie{
+
+}
+
+.agenda_recuadro-pie h2{
+    color: white;
+    text-align: center;
+}
+
+/*talleres*/
+
+.talleres{
+    background-image: linear-gradient(rgba(140, 60, 48, 0.9), rgba(140, 60, 48, 0.9) ), url(../images/imagen-contacto.jpg);
+    min-height: 50rem;
+    padding:10rem 0;
+}
+
+.talleres_recuadro{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    text-align: center;
+}
+
+.talleres_titulo{
+    color: white;
+    font-size: 3.4rem;
+    padding: 3rem 0;
+    font-weight: bolder;
+}
+
+.talleres_parrafo{
+    color: white;
+    font-size: 2rem;
+    padding: 3rem 0;
+    font-weight: bold;
+    width: 60%;
+    margin: auto;
+
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    
+}
+form label{
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+form input{
+    width: 60%;
+    height: 6rem;
+}
+
+@media (min-width : 768px) {
+    .nuestra-mision{
+        padding: 10rem 5rem;
+    }
+}
+
+
