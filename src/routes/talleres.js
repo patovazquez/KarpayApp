@@ -30,7 +30,6 @@ var storage = multer.diskStorage({
 
 var talleresController = require(path.join(__dirname,'..','controllers','talleresController'));
 
-
 /* rutas GET */
 router.get('/', usersPass, talleresController.index);
 router.get('/register',usersPass, talleresController.register);

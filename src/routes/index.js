@@ -5,5 +5,8 @@ var indexController = require(path.join(__dirname,'..','controllers','indexContr
 
 /* GET home page. */
 router.get('/', indexController.index)
+router.get('/proyectos', indexController.proyectos)
+router.get('/novedades', indexController.novedades)
+router.get('/talleres', indexController.talleres)
 
 module.exports = router;
