@@ -74,9 +74,9 @@ module.exports = {
         .isLength({ min: 8 })
         .withMessage("La contraseña debe tener 8 caracteres como minimo"),
 
-        body('user_img')
+        /*body('user_img')
         .custom((value,{req}) => req.file) //Si no existe req.file la verificacion no va a pasar
-        .withMessage("La imagen no es valida o no se ha elegido ninguna"),
+        .withMessage("La imagen no es valida o no se ha elegido ninguna"),*/
 
         body('passwordCheck').
         custom((value,{req}) => {
@@ -123,6 +123,22 @@ module.exports = {
         .custom((value,{req}) => req.file) //Si no existe req.file la verificacion no va a pasar
         .withMessage("La imagen no es valida o no se ha elegido ninguna")
 
-    ]
+    ],
+    editNovedades:[
+        body('title')
+        .isLength({ min: 2 })
+        .withMessage("El campo de nombre debe tener 2 caracteres como minimo"),
+        
+
+        body('resume')
+        .notEmpty()
+        .withMessage("El campo de resumen no puede estar vacio"),
+
+        
+        /*body('product_img')
+        .custom((value,{req}) => req.file) //Si no existe req.file la verificacion no va a pasar
+        .withMessage("La imagen no es valida o no se ha elegido ninguna")*/
+    ],
+
 
 }

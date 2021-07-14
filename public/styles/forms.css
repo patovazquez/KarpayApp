@@ -1,7 +1,8 @@
 *{
-    font-family: 'Maven Pro', sans-serif;
-}
-
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    
+  }
 body{ 
     height:100vh; margin:0;
     display:flex; 
@@ -105,6 +106,7 @@ p.titulos{
   }
   div.error_messages{
     color: red;
+    font-size: 15px;
 }
   select.error{
     height: 37px;
@@ -159,6 +161,15 @@ div.texto{
 hr { width:80%;
     text-align:center;
     
+ }
+
+ .label_decoration{
+     font-size: 20px;
+ }
+
+ .form{
+     font-size: 130%;
+
  }
 
 

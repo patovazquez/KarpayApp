@@ -1,0 +1,49 @@
+<%- include('./partials/header') %>
+
+    <link rel="stylesheet" href="/styles/novedades.css">
+
+    <main>
+        <section class="proyectos-header">
+            <div class="proyectos-header_titulo">
+                <h1>Novedades</h1>
+            </div>
+            <div class="proyectos-header_parrafo">
+                <p> Desde Karpay buscamos formar agentes de cambio y generar consciencia
+                     ambiental desde la cosmovisión andina
+                </p>
+            </div>
+        </section>
+
+
+        <section class="proyectos-main">
+
+            <% Novedades.forEach(Novedades => { %>
+
+            <section class="proyectos">
+                <div class="proyectos-info right">
+                    <div class="proyectos-info_titulo">
+                        <h1><%= Novedades.title %></h1>
+                        <br />
+                    </div>
+                    
+                    <div class="proyectos-info-parrafo">
+                        <p><%= Novedades.description %></p>
+                    </div>
+                    <div class="proyectos-info_mas">                        
+                    </div>
+                </div>
+                <div class="proyectos-img">
+                    <img src="/images/novedades/<%= Novedades.image %>" alt="novedad">
+                </div>
+            </section>
+            <hr>
+
+            <% }) %>   
+            
+        </section>
+    </main>
+
+<%- include('./partials/footer'); %>    
+    
+
+    

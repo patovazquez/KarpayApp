@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+
+<link rel="stylesheet" href="/styles/talleres.css">
+
+<main>
+    <section class="talleres-header">
+        <div class="talleres-header_titulo">
+            <h1>Talleres y Campañas</h1>
+        </div>
+        <div class="talleres-header_parrafo">
+            <p>Encontrá información detallada acerca de nuestros cursos, talleres y campañas.</p>
+        </div>
+    </section>
+
+    <section class="talleres-main">
+        <% Talleres.forEach(Talleres => { %>
+
+        <section class="talleres-recuadro">
+            <div class="talleres-img">
+                <img src="/images/talleres/<%= Talleres.image %>" alt="talleres"> 
+            </div>
+
+            <div class="talleres-texto">
+                <div class="talleres-texto_titulo">
+                    <h1><%= Talleres.title %></h1> 
+                </div>
+                <div class="talleres-texto_parrafo">
+                    <p><%= Talleres.resume %></p>
+                </div>
+                <div class="talleres-texto_anclaje">
+                    <h2><a href="/detalle/<%= Talleres.id %>">Conocé mas</a></h2>
+                </div>
+            </div>
+        </section>
+
+        <% }) %>    
+    
+        
+    </section>
+</main>
+
+<%- include('partials/footer'); %>

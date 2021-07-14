@@ -1,6 +1,4 @@
-*{
-    font-family: 'Maven Pro', sans-serif;
-}
+
 h2{
     margin:10px;
     color: rgb(53, 53, 53)
@@ -78,6 +76,10 @@ article.usersList{
 p{
     margin: 10px
 }
+.form{
+    font-size: 130%;
+}
+
 .users-button{    
     transition: all 0.3s ease 0s;
     margin-top: 15px;

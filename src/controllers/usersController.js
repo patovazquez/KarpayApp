@@ -63,22 +63,38 @@ module.exports = {
   }, 
   update: async (req,res) =>{
       const errors = validationResult(req);
-
-      if (!errors.isEmpty()) {
+      const oneUser = await db.User.findByPk(req.params.id);  
+      let imagePath = path.join(__dirname, '../../public/images/users/' + oneUser.image);      
+            
+      if (!errors.isEmpty()) {                        
+       
           let old = {
               ...req.body,
               id: req.params.id              
           }
           return res.render('userEdit', {errors: errors.array(), oneUser: old})
       }else{
+
+
           let editedUser = {
-              ...req.body,
-              image: req.file.filename,
+              ...req.body,                     
               password: bcrypt.hashSync(req.body.password, 10),
           }
+          if (req.file) {
+            editedUser.image = req.file.filename;
+          // Elimino imagen subida 
+            if (fs.existsSync(imagePath)) {
+              fs.unlinkSync(imagePath)
+          }
+
+          } else if (req.body.oldImage) {
+            editedUser.image = req.body.oldImage;
+          }
+
 
           try{
               await db.User.update(editedUser,{where:{id: req.params.id}})
+                            
           }catch(error){
               res.send(error);
           }
@@ -87,17 +103,20 @@ module.exports = {
       }
   },
   destroy: async (req,res)=> {
+    let existingUser = await db.User.findByPk(req.params.id);
+    let imagePath = path.join(__dirname, '../../public/images/users/' + existingUser.image);
 
     try{
-        await db.User.destroy({
-            where: {
-                id: req.params.id,
-            }
-          });      
+        await db.User.destroy({ where: { id: req.params.id, } })  
+       
+          if(fs.existsSync(imagePath)){
+              fs.unlinkSync(imagePath)}
+                      
         
     }catch(error){
         res.send(error);
     }
+    
     res.redirect('/admin/users/');
     
   },

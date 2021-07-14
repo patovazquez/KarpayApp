@@ -1,0 +1,40 @@
+h2{
+    color: #458E72;
+    font-size: 3.2rem;
+    font-weight: bolder;
+}
+
+p{
+    color: #458E72;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    width: 80%;
+}
+
+.imageSomos{
+    width: 20rem;
+    
+}
+
+.cadaUno{
+
+    width: 90%;
+    margin: 15px;    
+    
+    
+}
+
+.somosMain{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.section-somos{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+#privacidad{
+    font-size: small;
+}

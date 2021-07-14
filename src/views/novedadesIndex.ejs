@@ -25,7 +25,7 @@
     <section class="main-section">
 
         <section class="grid-container">
-            <% Novedades.forEach(Novedades => { %>
+            <% Novedades.forEach(Novedades => { %> 
                 
                 <article class= 'usersList'>
                     <a href="/admin/novedades/edit/<%= Novedades.id %>">
@@ -38,7 +38,7 @@
                     
                     <a href="/admin/novedades/detail/<%= Novedades.id %>">
                     <img id="myImg" src="/images/novedades/<%= Novedades.image %>" class="usersImage" alt="Image">               
-                    <p><%= Novedades.title %> </p>              
+                    <p class= "form"><%= Novedades.title %> </p>              
                     
                 </a>                   
                 </article>

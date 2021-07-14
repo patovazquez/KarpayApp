@@ -39,7 +39,7 @@ router.get('/detail/:id', novedadesController.detail);
 
 /*Rutas POST */ 
 router.post('/register',usersPass, upload.single('news_img'),validations.novedades,novedadesController.processRegister);
-router.put('/edit/:id',usersPass, upload.single('news_img'),validations.novedades,novedadesController.update);
+router.put('/edit/:id',usersPass, upload.single('news_img'),validations.editNovedades,novedadesController.update);
 router.delete('/delete/:id',usersPass, novedadesController.destroy); 
 
 

@@ -1,0 +1,278 @@
+.quienes-somos{
+    background-image: url(../images/quienesSomosRecortV3.png);
+    padding: 17rem 15rem;
+    display: flex;
+    flex-wrap: wrap;
+    background-size: cover;
+    margin-right: auto;
+}
+
+.quienes-somos__recuadro{
+    width: 40rem;
+}
+
+.quienes-somos__recuadro-titulo{
+    background-color: #458E72;
+}
+
+.quienes-somos__recuadro-titulo h2{
+    font-size: 3.5rem;
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+    font-weight: lighter;
+}
+
+.quienes-somos__recuadro-parrafo{
+    background-color: #56a084;
+}
+
+.quienes-somos__recuadro-parrafo p{
+    font-size: 1.7rem;
+    color: white;
+    text-align: center;
+    padding: 4rem 4rem;
+}
+
+/*nuestra mision*/
+
+.nuestra-mision{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(../images/imagen-nuestramision.jpg);
+    background-size: cover;
+    padding: 18rem 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: -80px;
+    z-index: -1;
+    position: relative;
+}
+
+
+.nuestra-mision_img{
+    width: 30%;
+    margin: auto;
+}
+
+.nuestra-mision_img img{
+    width: 100%;
+}
+
+.nuestra-mision__recuadro{
+    width: 40rem;
+    margin: 2rem;
+    padding-right: 6rem;
+}
+
+.nuestra-mision__recuadro-titulo{
+    background-color: #1d5c8c;
+}
+
+.nuestra-mision__recuadro-titulo h2{
+    font-size: 3.5rem;
+    font-weight: lighter;
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.nuestra-mision__recuadro-parrafo{
+    background-color: #4278A0 ;    
+}
+
+.nuestra-mision__recuadro-parrafo p{
+    font-size: 1.7rem;
+    color: white;
+    text-align: center;
+    padding: 4rem 4rem;
+}
+
+/*proyectos*/
+
+.proyectos{
+    background: #4ba07f;
+    padding: 10rem;
+    
+}
+
+.proyecto__recuadro{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.proyecto__recuadro-titulo h2{
+    font-size: 3.8rem;
+    font-weight:bolder;
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.proyecto__recuadro-parrafo{
+    align-items: center;
+}
+.proyecto__recuadro-parrafo p{
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    width: 70%;
+    min-width: 20rem;
+    margin: auto;
+}
+
+.proyecto__recuadro-pie h2{
+    font-size: 2.4rem;
+    font-weight:bolder;
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+}
+/*agenda*/
+
+.agenda{
+    background-image: url(../images/novedadesRecortV3.png); 
+    display: flex;
+    flex-wrap: wrap;
+    background-size: cover;
+    align-items: center; 
+    box-sizing: border-box;
+    justify-content: space-around; 
+    padding-top: 12rem;
+    padding-bottom: 25rem;
+    
+}
+    
+
+
+.agenda-box{    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;    
+}
+
+.agenda_recuadro{
+    width: 250px;      
+    background-color:#4278A0;
+    padding: 3rem 1.5rem;
+    margin: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.agenda_recuadro-titulo h2{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+
+
+.agenda_recuadro-parrafo p{
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    white-space: pre-wrap;
+    padding: 5px;
+}
+
+
+
+.agenda_recuadro-pie h3{
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+/*talleres*/
+
+.talleres{
+    background-image: linear-gradient(rgba(140, 60, 48, 0.9), rgba(140, 60, 48, 0.9) ), url(../images/imagen-contacto.jpg);
+    padding:10rem 0 0;
+    margin-top: -120px;
+    z-index: -1;
+    position: relative;
+}
+
+.talleres_recuadro{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+    z-index: -1;
+    position: relative;
+}
+
+
+.talleres_titulo{
+    color: white;
+    font-size: 3.4rem;
+    padding: 2rem 0;
+    font-weight: bolder;
+    
+}
+
+.talleres_parrafo{
+    color: white;
+    font-size: 2rem;
+    padding: 3rem 0;
+    font-weight: bold;
+    width: 60%;
+    margin: auto;
+
+}
+
+.formulario{    
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(140, 60, 48, 0.9), rgba(140, 60, 48, 0.9) ), url(../images/imagen-contacto.jpg);
+    
+}
+form label{
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    
+}
+
+form input{
+    width: 40rem;
+    height: 4rem;
+}
+a{
+text-decoration: none;
+}
+.submit-button{   
+    margin-top: 15px;
+    margin-bottom: 15px;
+	background-color: #458e72;
+	border-radius: 7em;
+	border: none;
+	padding: 10px 20px;
+	font-size: 18pt;	
+	cursor: pointer;
+	outline: none;
+	}
+   
+
+@media (max-width : 700px) {
+    .nuestra-mision{
+        padding: 5rem 5rem;
+    }
+
+    .quienes-somos{
+        padding: 5rem 5rem;
+    }
+}
+
+

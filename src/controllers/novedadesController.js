@@ -77,43 +77,63 @@ module.exports = {
     },
     update: async (req,res) =>{
         const errors = validationResult(req);
-  
-        if (!errors.isEmpty()) {
+        const oneNovedad = await db.Novedades.findByPk(req.params.id);  
+        let imagePath = path.join(__dirname, '../../public/images/novedades/' + oneNovedad.image);      
+              
+        if (!errors.isEmpty()) {                        
+         
             let old = {
                 ...req.body,
                 id: req.params.id              
             }
-            return res.render('editNovedades', {errors: errors.array(), oneNovedad: old})
+            return res.render('novedadEdit', {errors: errors.array(), oneNovedad: old})
         }else{
+  
+  
             let editedNovedad = {
-                ...req.body,
-                image: req.file.filename,                
+                ...req.body,                     
+               
             }
+            if (req.file) {
+              editedNovedad.image = req.file.filename;
+            // Elimino imagen subida 
+              if (fs.existsSync(imagePath)) {
+                fs.unlinkSync(imagePath)
+            }
+  
+            } else if (req.body.oldImage) {
+              editedNovedad.image = req.body.oldImage;
+            }
+  
   
             try{
                 await db.Novedades.update(editedNovedad,{where:{id: req.params.id}})
+                              
             }catch(error){
                 res.send(error);
             }
   
-            res.redirect('/admin/novedades/');
+            res.redirect('/admin/novedades');
         }
-    },
+    },    
     destroy: async (req,res)=> {
+    let existingNovedad = await db.Novedades.findByPk(req.params.id);
+    let imagePath = path.join(__dirname, '../../public/images/novedades/' + existingNovedad.image);
 
-        try{
-            await db.Novedades.destroy({
-                where: {
-                    id: req.params.id,
-                }
-              });      
-            
-        }catch(error){
-            res.send(error);
-        }
-        res.redirect('/admin/novedades/');
+    try{
+        await db.Novedades.destroy({ where: { id: req.params.id, } })  
+       
+          if(fs.existsSync(imagePath)){
+              fs.unlinkSync(imagePath)}
+                      
         
-      },
+    }catch(error){
+        res.send(error);
+    }
+    
+    res.redirect('/admin/novedades/');
+    
+  },
         
     
     

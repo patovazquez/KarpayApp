@@ -1,0 +1,16 @@
+.main-footer{  
+    box-sizing: border-box;
+    background-color: #458E72;
+    text-align: center;
+    height: 10rem;
+    padding: 4.5rem 0;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;    
+    font-size: small;      
+}
+h1{
+    color: white;
+}

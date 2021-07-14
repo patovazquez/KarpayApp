@@ -8,6 +8,7 @@ var usersPass = require(path.join(__dirname,'..' ,'middlewares', 'usersPass.js')
 /* GET home page. */
 router.get('/', adminController.login);
 router.get('/dashboard',usersPass, adminController.dashBoard);
+router.get('/productos',usersPass, adminController.dashBoard);
 
 /*POST users listing */
 router.post('/',validations.login,adminController.processLogin);

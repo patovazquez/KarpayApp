@@ -1,6 +1,4 @@
-*{
-    font-family: 'Maven Pro', sans-serif;
-}
+
 body{ 
     height:100vh; margin:0;
     display:flex; 
@@ -45,6 +43,10 @@ h2{
 	box-shadow: 0px 15px 20px rgba(121, 121, 121, 0.4);
 	color:black;
 	transform: translateX(-7px);
+  }
+
+  .form{
+      font-size: 130%;
   }
 
 

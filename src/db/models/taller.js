@@ -17,7 +17,7 @@ const Talleres = sequelize.define('Talleres', {
 Talleres.associate = (models =>{
     Talleres.belongsTo(models.User,{foreignKey: 'created_user_id' });
 
-}); 
+});  
 
 
 

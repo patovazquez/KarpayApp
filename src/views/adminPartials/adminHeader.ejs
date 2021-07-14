@@ -1,11 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <title>Karpay</title>
+</head>
 
+<body> 
+    <header class="header">     
+        <div class="header_logo"> 
+            <div class="header_logo-imagen">
+                <a href="/"><img href="/" src="/images/karpay-logo-header.png" alt="logo"></a>
+            </div>
+            <a href="/"style="text-decoration: none;">
+            <div class="header_logo-nombre">
+                <h1>Karpay</h1>
+                <h2>Comunidad de poder</h2>
+            </div>
+            </a>
+        </div>
 
-<header>
-    <nav>
-        <form action="/admin/logout" method="POST" id="logout">
-            <button type="submit">logout</button> 
-        </form>
-        <a href="/admin"><button>Login</button></a>
-        <a href="/admin/dashboard"><button>Tablero</button></a>
-    </nav>
-</header>
+        <div class="header_menu">
+            <form action="/admin/logout" method="POST" id="logout">
+                <button type="submit">logout</button> 
+            </form>
+            <a href="/admin"><button>Login</button></a>
+            <ul>
+                <li><a href="/admin/dashboard">Tablero</a></li>
+                <li><a href="/admin/novedades">Novedades</a></li>
+                <li><a href="/admin/talleres">Talleres y campañas</a></li>
+                <li><a href="/admin/productos">Productos</a></li>
+            </ul>
+            <div class="header_menu-iconos">
+                <img src="/images/icon-instagram-26.png" alt="">
+                <img src="/images/icon-facebook-48.png" alt="">
+            </div>
+        </div>       
+    </header>

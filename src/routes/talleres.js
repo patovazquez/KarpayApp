@@ -39,7 +39,7 @@ router.get('/detail/:id', talleresController.detail);
 
 /*Rutas POST */ 
 router.post('/register',usersPass, upload.single('workshop_img'),validations.novedades,talleresController.processRegister);
-router.put('/edit/:id',usersPass, upload.single('workshop_img'),validations.novedades,talleresController.update);
+router.put('/edit/:id',usersPass, upload.single('workshop_img'),validations.editNovedades,talleresController.update);
 router.delete('/delete/:id',usersPass, talleresController.destroy); 
 
 

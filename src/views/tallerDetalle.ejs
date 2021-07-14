@@ -1,0 +1,40 @@
+<%- include('partials/header') %>
+
+<link rel="stylesheet" href="/styles/talleres.css">
+
+<main>
+    <section class="talleres-header">
+        <div class="talleres-header_titulo">
+            <h1>Taller: <%= oneTaller.title %></h1>
+        </div>
+        <div class="talleres-header_parrafo">
+            <p>Encontrá información detallada acerca de nuestros cursos y talleres.</p>
+        </div>
+    </section>
+
+    <section class="talleres-main">
+     
+
+        <section class="talleres-recuadro-detalles">
+            <div class="talleres-img">
+                <img src="/images/talleres/<%= oneTaller.image %>" alt="talleres"> 
+            </div>
+
+            <div class="talleres-texto-detalle">
+                <div class="talleres-texto_titulo">
+                    <h1><%= oneTaller.title %></h1> 
+                </div>
+                <div class="talleres-texto_parrafo">
+                    <p><%= oneTaller.resume %></p>
+                </div>   
+                <div class="talleres-texto_parrafo">
+                    <p><%= oneTaller.description %></p>
+                </div>              
+            </div>
+        </section>     
+    
+        
+    </section>
+</main>
+
+<%- include('partials/footer'); %>

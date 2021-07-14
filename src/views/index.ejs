@@ -1,12 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karpay</title>
-</head>
-<body>
-  <h1>Karpay</h1>
-</body>
-</html>
+<%- include('partials/header') %>
+
+<link rel="stylesheet" href="/styles/home.css">
+
+<main class="index">
+
+    <section class="quienes-somos">
+        <a href="/quienesSomos">
+            <div class="quienes-somos__recuadro">
+                <div class="quienes-somos__recuadro-titulo"><h2>¿Quiénes somos?</h2></div>
+                <div class="quienes-somos__recuadro-parrafo"><p>Somos una organizacion sin fines de lucro, trabajamos para concientizar sobre el cuidado del medioambiente y compartir practicas afines, generar conciencia salduable en los inviduos  y practicas preventivas en salud y promover una cultura de la paz . Nos guia la sabiduria ancestral y la conviccion de que los cambios son posibles.</p></div>
+            </div>
+        </a>
+    </section>
+    
+    <section class="nuestra-mision">        
+        <div class="nuestra-mision_img">
+            <img src="/images/logoTransparente.png" alt="Logo de Karpay">
+        </div>
+        <div class="nuestra-mision__recuadro">
+            <div class="nuestra-mision__recuadro-titulo">
+                <h2>Nuestra misión</h2>
+            </div>
+            <div class="nuestra-mision__recuadro-parrafo">
+                <p>Generar concienca en individuos y comunidades, integrando la sabiduría ancestral y la actual para la construcción y desarrollo en las areas de salud, cultura de la paz y desarrollo sostenible y abordaje olístico del ser para la construccion y desarrollo de practicas integrativas de desarrollo sostenible,area de la salud, la cultura de la paz y fortaleciendo bajo una mirada holistica a los inviduos para a su vez acomparlos en la  construccion  y el desarrollo  de vinculos intra e inter comunitarios ,formando asi verdaderas comunidades empoderadas.</p>
+            </div>
+        </div>        
+    </section> 
+
+    <section class="proyectos">
+        <div class="proyecto__recuadro">
+            <div class="proyecto__recuadro-titulo">
+                <h2>Proyectos</h2>
+            </div>
+            <div class="proyecto__recuadro-parrafo">
+                <p>Desde Karpay buscamos integrar a la sociedad en nuestros proyectos. Es por ello que creamos estas iniciativas con el fin de ampliar la red de lucha por el medioambiente. Con el fin de ampliar la red de conciencia y accion en el cuidado del medioambiente, una mayor conciencia en el area de salud y practicas preventivas, y promoviendo activamente propuestas para una la cultura de la paz.
+
+                </p>
+            </div>
+            <div class="proyecto__recuadro-pie">
+                <a href="/proyectos"><h2>CONOCÉ NUESTROS PROYECTOS</h2></a>
+            </div>
+        </div>
+    </section>  
+
+    <section class="agenda">
+       
+        <div class="agenda-box">
+            <% Novedades.forEach(Novedades => { %>
+            <article class="agenda_recuadro">
+                <div class="agenda_recuadro-titulo">
+                    <h2><%= Novedades.title %></h2>
+                </div>
+                <div class="agenda_recuadro-parrafo">
+                    <p><%= Novedades.resume %> </p>
+                </div>
+                <div class="agenda_recuadro-pie">
+                    <a href="/novedades"><h3>Aprendé más</h3></a>
+                </div>
+            </article>
+            <% }) %>     
+                 
+        </div>
+    </section>
+
+    <section class="talleres">
+        <div class="talleres_recuadro">
+            <div class="talleres_titulo">
+                <h1>¿Te interesa colaborar con nosotros?</h1>
+            </div>
+            <div class="talleres_parrafo">
+                <p>Envíanos un correo con tus datos personales y te contamos de qué forma podés ayudar a nuestra organización. Podrías colaborar de forma presencial o mediante una contribución monetaria.</p>
+            </div>               
+        </div>
+    </section>
+        <div class="talleres_form">
+            <form class= "formulario" action="/sendEmail" method="POST">
+                <div>
+                    <label for="">Indicanos tu nombre*</label><br>
+                    <input type="text" placeholder="Nombre" name= "name">
+                </div>
+                <div>
+                    <label for="">E-mail*</label><br>
+                    <input type="email" placeholder="Mail" name= "email" >
+                </div>
+                <div>
+                    <label for="">Dejanos tu mensaje acá*</label><br>
+                    <textarea name="message" id="" cols="35" rows="5" placeholder="Mensaje"></textarea>
+                </div>
+                <button type="submit"  class="submit-button">Enviar</button>
+            </form>
+        </div>
+  
+    
+    
+    
+</main>
+<%- include('partials/footer') %>
+

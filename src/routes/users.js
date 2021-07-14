@@ -9,7 +9,7 @@ var adminPass = require(path.join(__dirname,'..' ,'middlewares', 'adminPass.js')
 //Configuracion de multer
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, __dirname + '/../../public/images/users');
+      cb(null, __dirname + '/../../public/images/users'); 
     },
     filename: function (req, file, cb) {
       cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
@@ -25,7 +25,7 @@ var storage = multer.diskStorage({
         cb(null, false);
       }
     }
-  });
+  }); 
 //Fin de la configuracion de multer
 
 
