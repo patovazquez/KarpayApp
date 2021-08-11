@@ -273,6 +273,24 @@ text-decoration: none;
     .quienes-somos{
         padding: 5rem 5rem;
     }
+    .quienes-somos__recuadro {
+        width: 100%;
+    }
+    .nuestra-mision__recuadro {
+        width:100%;
+        margin: 2rem;
+        padding-right: 0rem;
+    }
+    form input{
+        width: 100%;
+        height: 4rem;
+    }
+    textarea{
+
+        width: 90%;
+        margin-left: 1rem;
+
+    }
 }
 
 

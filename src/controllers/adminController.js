@@ -9,7 +9,7 @@ const bcrypt = require('bcrypt');
 module.exports = {
     login: function(req, res, next) {
 
-        res.render('adminLogIn', { title: 'Karpay' });
+        res.render('adminLogin', { title: 'Karpay' });
 
       },
       

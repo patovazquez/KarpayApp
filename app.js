@@ -14,17 +14,17 @@ var session = require('express-session');
 //var log = require(path.join(__dirname, 'middlewares', 'log.js'));
 
 
-var indexRouter = require('./routes/index');
-var adminRouter = require('./routes/admin');
-var usersRouter = require('./routes/users');
-var novedadesRouter = require('./routes/novedades');
-var talleresRouter = require('./routes/talleres');
+var indexRouter = require('./src/routes/index');
+var adminRouter = require('./src/routes/admin');
+var usersRouter = require('./src/routes/users');
+var novedadesRouter = require('./src/routes/novedades');
+var talleresRouter = require('./src/routes/talleres');
 //var productsRouter = require('./routes/products');
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'src/views'));
 app.set('view engine', 'ejs');
 
 //Middlewares
@@ -32,7 +32,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname,'..', 'public')));
+app.use(express.static(path.join(__dirname,/*'..',*/ 'public')));
 app.use(methodOverride('_method'));
 app.use(session({
   secret: 'KarpayApp',
